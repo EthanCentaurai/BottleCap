@@ -1,0 +1,5 @@
+package-as: Prat-3.0_BottleCap
+
+required-dependencies:
+   - prat-3-0
+

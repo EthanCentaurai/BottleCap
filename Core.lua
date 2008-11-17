@@ -45,3 +45,4 @@ function BottleCap:Prat_PreAddMessage(_, message, frame, event, t, r, g, b)
 		message.MESSAGE = msg:lower()
 	end
 end
+
