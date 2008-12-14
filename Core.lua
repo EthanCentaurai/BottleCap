@@ -19,7 +19,7 @@ Prat:SetModuleOptions(BottleCap, {
 	args = {
 		verbose = {
 			name = "Verbose Mode",
-			desc = "Convert all chat, regardless of case, into lowercase text (except if it has a link in it).",
+			desc = "Convert all chat, regardless of original case, into lowercase text.",
 			type = "toggle", order = 1,
 		},
 	},
@@ -37,12 +37,21 @@ end
 function BottleCap:Prat_PreAddMessage(_, message, frame, event, t, r, g, b)
 	local msg = message.MESSAGE
 
-	if msg:find("|[Hh]") then return end -- ignore chat with hyperlinks, we screw it up otherwise
-
 	if self.db.profile.verbose or msg == msg:upper() then
 		-- Verbose Mode = all chat becomes lower case, regardless of original case
 		-- else all ALL CAPS CHAT becomes lower case
-		message.MESSAGE = msg:lower()
+		msg = msg:lower()
 	end
+
+	-- Fix links
+	msg = msg:gsub("|hitem", "|Hitem")
+	msg = msg:gsub("|hquest", "|Hquest")
+	msg = msg:gsub("|hspell", "|Hspell")
+	msg = msg:gsub("|htalent", "|Htalent")
+	msg = msg:gsub("|hachievement", "|Hachievement")
+	msg = msg:gsub("|htrade", "|Htrade")
+	msg = msg:gsub("|henchant", "|Henchant")
+
+	message.MESSAGE = msg
 end
 
