@@ -35,6 +35,8 @@ function BottleCap:OnModuleDisable()
 end
 
 function BottleCap:Prat_PreAddMessage(_, message, frame, event, t, r, g, b)
+	if event == "CHAT_MSG_SYSTEM" then return end
+
 	local msg = message.MESSAGE
 
 	if self.db.profile.verbose or msg == msg:upper() then
