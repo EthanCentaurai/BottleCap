@@ -47,7 +47,6 @@ function BottleCap:OnEnable()
 	-- I hate ugleh hax :(
 	if IsAddOnLoaded("Prat-3.0") then
 		Prat.RegisterChatEvent(self, "Prat_PreAddMessage")
-		print("Prat raped successfully")
 	else
 		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", bottleCaps)
 		ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", bottleCaps)
