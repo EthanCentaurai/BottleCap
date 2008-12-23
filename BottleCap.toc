@@ -1,12 +1,13 @@
 ## Interface: 30000
-## Title: Prat |cff8080ff3.0|r |r[|cffeda55fBottle Cap|r]
+## Title: Bottle Cap
 ## Author: Ethan Centaurai
-## Version: 2.0
+## Version: 3.0
 ## Notes: Converts ALL CAPS CHAT into all lowercase chat
+## SavedVariables: BottleCapDB
 ## X-Email: ethan.centaurai@live.co.uk
 ## X-Category: Chat/Communication
 ## LoadOnDemand: 0
 ## DefaultState: Enabled
-## Dependencies: Prat-3.0
+
 Core.lua
 
