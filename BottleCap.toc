@@ -1,13 +1,22 @@
 ## Interface: 30000
 ## Title: Bottle Cap
-## Author: Ethan Centaurai
-## Version: 3.0
+## Version: @project-version@
 ## Notes: Converts ALL CAPS CHAT into all lowercase chat
-## SavedVariables: BottleCapDB
-## X-Email: ethan.centaurai@live.co.uk
+## Author: Ethan Centaurai
+## X-eMail: ethan.centaurai@live.co.uk
+## X-Donate: PayPal:ethan.centaurai@live.co.uk
 ## X-Category: Chat/Communication
-## LoadOnDemand: 0
-## DefaultState: Enabled
+## SavedVariables: BottleCapDB
+## OptionalDeps: Ace3, Prat-3.0
+
+#@no-lib-strip@
+Lib\LibStub\LibStub.lua
+Lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Lib\AceAddon-3.0\AceAddon-3.0.lua
+Lib\AceDB-3.0\AceDB-3.0.lua
+Lib\AceGUI-3.0\AceGUI-3.0.xml
+Lib\AceConfig-3.0\AceConfig-3.0.xml
+#@end-no-lib-strip@
 
 Core.lua
 
