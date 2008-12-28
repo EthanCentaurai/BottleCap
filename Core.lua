@@ -16,6 +16,7 @@ local function bottleCaps(msg)
 		msg = msg:gsub("|hachievement", "|Hachievement")
 		msg = msg:gsub("|htrade", "|Htrade")
 		msg = msg:gsub("|henchant", "|Henchant")
+		msg = msg:gsub("|hglyph", "|Hglyph")
 
 		return false, msg
 	end
