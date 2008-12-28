@@ -27,6 +27,16 @@ function BottleCap:OnEnable()
 
 	db = self.db.profile
 
+	if IsAddOnLoaded("Prat-3.0") then
+		Prat.RegisterChatEvent(self, "Prat_PreAddMessage")
+	else
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", bottleCaps)
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", bottleCaps)
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", bottleCaps)
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", bottleCaps)
+	end
+
+
 	LibStub("AceConfig-3.0"):RegisterOptionsTable("BottleCap", {
 		name = "Bottle Cap",
 		desc = "Converts ALL CAPS CHAT into all lowercase chat.",
@@ -43,16 +53,6 @@ function BottleCap:OnEnable()
 	})
 
 	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("BottleCap", "Bottle Cap")
-
-	-- I hate ugleh hax :(
-	if IsAddOnLoaded("Prat-3.0") then
-		Prat.RegisterChatEvent(self, "Prat_PreAddMessage")
-	else
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", bottleCaps)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", bottleCaps)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", bottleCaps)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", bottleCaps)
-	end
 end
 
 function BottleCap:Prat_PreAddMessage(_, message, frame, event, t, r, g, b)
