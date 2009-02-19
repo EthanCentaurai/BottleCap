@@ -1,0 +1,13 @@
+Version 3.0
+- Re-written as a standalone addon.
+- Fixed hyperlinks for Glyphs.
+
+Version 2.0.1
+- Verbose Mode now works with chat with links in it.
+- Due to popular demand, BottleCap now ignores system messages.
+
+Version 2.0
+- Re-written for Prat-3.0 and WoW-3.0.
+
+Version 1.0
+- Initial public release.
