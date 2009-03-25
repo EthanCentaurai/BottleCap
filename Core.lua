@@ -1,4 +1,4 @@
-
+﻿
 local BottleCap = LibStub("AceAddon-3.0"):NewAddon("BottleCap")
 local db
 
@@ -61,4 +61,3 @@ function BottleCap:Prat_PreAddMessage(_, message, frame, event, t, r, g, b)
 
 	_, message.MESSAGE = bottleCaps(message.MESSAGE)
 end
-
