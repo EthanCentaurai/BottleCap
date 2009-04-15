@@ -2,7 +2,7 @@
 local BottleCap = LibStub("AceAddon-3.0"):NewAddon("BottleCap")
 local db
 
-local function bottleCaps(msg)
+local function bottleCaps(_, _, msg, ...)
 	if db.verbose or msg == msg:upper() then
 		-- Verbose Mode = all chat becomes lower case, regardless of original case
 		-- else all ALL CAPS CHAT becomes lower case
@@ -18,7 +18,7 @@ local function bottleCaps(msg)
 		msg = msg:gsub("|henchant", "|Henchant")
 		msg = msg:gsub("|hglyph", "|Hglyph")
 
-		return false, msg
+		return false, msg, ...
 	end
 end
 
@@ -28,15 +28,10 @@ function BottleCap:OnEnable()
 
 	db = self.db.profile
 
-	if IsAddOnLoaded("Prat-3.0") then
-		Prat.RegisterChatEvent(self, "Prat_PreAddMessage")
-	else
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", bottleCaps)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", bottleCaps)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", bottleCaps)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", bottleCaps)
-	end
-
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", bottleCaps)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", bottleCaps)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", bottleCaps)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", bottleCaps)
 
 	LibStub("AceConfig-3.0"):RegisterOptionsTable("BottleCap", {
 		name = "Bottle Cap",
@@ -54,10 +49,4 @@ function BottleCap:OnEnable()
 	})
 
 	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("BottleCap", "Bottle Cap")
-end
-
-function BottleCap:Prat_PreAddMessage(_, message, frame, event, t, r, g, b)
-	if event == "CHAT_MSG_SYSTEM" then return end
-
-	_, message.MESSAGE = bottleCaps(message.MESSAGE)
 end
