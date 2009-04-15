@@ -2,9 +2,9 @@
 ## Title: Bottle Cap
 ## Notes: Converts ALL CAPS CHAT into all lowercase chat
 ## Author: Ethan Centaurai
-## Version: 3.0.1
+## Version: 3.0.2
 ## SavedVariables: BottleCapDB
-## OptionalDeps: Ace3, Prat-3.0
+## OptionalDeps: Ace3
 
 #@no-lib-strip@
 Lib\LibStub\LibStub.lua
