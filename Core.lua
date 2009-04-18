@@ -56,7 +56,7 @@ function BottleCap:OnEnable()
 				type = "group", inline = true, order = 2, args = {
 					desc = {
 						type = "description", order = 1, width = "full",
-						name = "Choose which channels should be monitored for all caps chat.\nPlease not that removing all the ticks will render this addon useless.",
+						name = "Choose which channels should be monitored for all caps chat.\nPlease note that removing all the ticks will render BottleCap useless.",
 					},
 					say = { type = "toggle", name = "Say", arg = "SAY", order = 2 },
 					yell = { type = "toggle", name = "Yell", arg = "YELL", order = 3 },
@@ -83,9 +83,12 @@ function BottleCap:OnEnable()
 	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("BottleCap", "Bottle Cap")
 end
 
-function BottleCap:ToggleFilter(key, value, noChange)
+function BottleCap:ToggleFilter(key, value)
 	db.filter[key.arg] = value
 
-	if value then ChatFrame_AddMessageEventFilter("CHAT_MSG_"..key.arg, bottleCaps)
-	else ChatFrame_RemoveMessageEventFilter("CHAT_MSG_"..key.arg, bottleCaps) end -- removing a non-existant filter will fail silently
+	if value then
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_"..key.arg, bottleCaps)
+	else
+		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_"..key.arg, bottleCaps) -- attempting to remove a non-existant filter will fail silently
+	end
 end
