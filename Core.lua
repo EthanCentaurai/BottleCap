@@ -81,6 +81,10 @@ function BottleCap:OnEnable()
 	})
 
 	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("BottleCap", "Bottle Cap")
+
+	_G.SlashCmdList["BOTTLECAP"] = function() InterfaceOptionsFrame_OpenToCategory("Bottle Cap") end
+	_G["SLASH_BOTTLECAP1"] = "/bottlecap"
+	_G["SLASH_BOTTLECAP2"] = "/bc"
 end
 
 function BottleCap:ToggleFilter(key, value)
