@@ -1,13 +1,19 @@
+Version 3.1
+- Added options allowing you to choose which channels should be monitored for all caps chat. Everything except guild and officer chat is monitored by default.
+- Added an option to prevent all caps chat from showing instead of being changed to lower case.
+- Added slash commands "/bottlecap" and "/bc" which show the options frame when typed.
+- Removed some trailing whitespace.
+
 Version 3.0.2
-- Really updated for WoW 3.1.0 (I couldn't get on the PTR... /excuses)
-- Remove now redundant Prat-3.0 hack layer.
+- Really updated for WoW 3.1.0 (I couldn't get on the PTR... /excuses).
+- Remove redundant Prat-3.0 compatibility layer.
 
 Version 3.0.1
 - Updated for WoW 3.1.0.
 
 Version 3.0
 - Re-written as a standalone addon.
-- Fixed hyperlinks for Glyphs.
+- Fixed Glyph hyperlinks.
 
 Version 2.0.1
 - Verbose Mode now works with chat with links in it.
