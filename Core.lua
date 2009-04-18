@@ -74,15 +74,15 @@ function BottleCap:OnEnable()
 					whisper = { type = "toggle", name = "Whisper", arg = "WHISPER", order = 13 },
 				},
 			},
-			ignore = {
-				name = "Ignore All Caps",
-				desc = "Prevent all caps chat from showing in your chat frames, rather than force them into lowercase.",
-				type = "toggle", order = 2, arg = "ignore",
-			},
 			verbose = {
 				name = "Verbose Mode",
 				desc = "Convert all chat into lowercase text, regardless of original case.",
-				type = "toggle", order = 3, arg = "verbose",
+				type = "toggle", order = 2, arg = "verbose",
+			},
+			ignore = {
+				name = "Ignore",
+				desc = "Prevent all caps chat from showing in your chat frames instead of forcing it into lowercase.  Text which is not all caps but was forced into lowercase by Verbose Mode is unaffected.",
+				type = "toggle", order = 3, arg = "ignore",
 			},
 		},
 	})
