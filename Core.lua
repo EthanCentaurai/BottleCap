@@ -30,7 +30,7 @@ function BottleCap:OnEnable()
 		verbose = false, ignore = true,
 		filter = {
 			SAY = true, YELL = true, GUILD = false, OFFICER = false,
-			PARTY = true, RAID = true, RAID_LEADER = true, RAID_WARNING = true, 
+			PARTY = true, RAID = true, RAID_LEADER = true, RAID_WARNING = true,
 			BATTLEGROUND = true, BATTLEGROUND_LEADER = true,
 			CHANNEL = true, WHISPER = true,
 		},
