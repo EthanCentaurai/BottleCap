@@ -1,8 +1,8 @@
-## Interface: 30100
+## Interface: 30200
 ## Title: Bottle Cap
 ## Notes: Converts ALL CAPS CHAT into lowercase chat.
 ## Author: Ethan Centaurai
-## Version: 3.1
+## Version: 3.1.1
 ## SavedVariables: BottleCapDB
 ## OptionalDeps: Ace3
 ## LoadManagers: AddonLoader
