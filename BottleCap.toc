@@ -5,6 +5,8 @@
 ## Version: 3.1
 ## SavedVariables: BottleCapDB
 ## OptionalDeps: Ace3
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
 
 #@no-lib-strip@
 Lib\LibStub\LibStub.lua
