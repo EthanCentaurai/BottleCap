@@ -1,3 +1,10 @@
+Version 3.1.2
+- Fixed compatibilty with Chatter's URL module.
+- Updated for WoW 3.3.0.
+
+Version 3.1.1
+- Updated for WoW 3.2.0.
+
 Version 3.1
 - Added options allowing you to choose which channels should be monitored for all caps chat. Everything except guild and officer chat is monitored by default.
 - Added an option to prevent all caps chat from showing instead of being changed to lower case.
