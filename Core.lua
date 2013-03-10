@@ -17,6 +17,7 @@ local function bottleCaps(_, _, msg, ...)
 		msg = msg:gsub("|htrade", "|Htrade")
 		msg = msg:gsub("|henchant", "|Henchant")
 		msg = msg:gsub("|hglyph", "|Hglyph")
+		msg = msg:gsub("|hjournal", "|Hjournal")
 		msg = msg:gsub("|hurl", "|Hurl") -- website links created by Chatter, Prat etc.
 
 		return false, msg, ...
