@@ -4,13 +4,14 @@
 ## Author: Ethan Centaurai
 ## Version: @project-version@
 ## SavedVariables: BottleCapDB
-## OptionalDeps: LibStub, Ace3
+## OptionalDeps: LibStub, LibChatAnims, Ace3
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Always: delayed
 
 #@no-lib-strip@
 Lib\LibStub\LibStub.lua
 Lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Lib\LibChatAnims\LibChatAnims.lua
 Lib\AceAddon-3.0\AceAddon-3.0.lua
 Lib\AceDB-3.0\AceDB-3.0.lua
 Lib\AceGUI-3.0\AceGUI-3.0.xml
