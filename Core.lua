@@ -90,12 +90,14 @@ function BottleCap:OnEnable()
 end
 
 function BottleCap:ToggleFilter(key, value)
-	db.filter[key.arg] = value
+	local channel = key.arg
+
+	db.filter[channel] = value
 
 	if value then
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_"..key.arg, bottleCaps)
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_"..channel, bottleCaps)
 	else
 		 -- attempting to remove a non-existant filter will fail silently
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_"..key.arg, bottleCaps)
+		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_"..channel, bottleCaps)
 	end
 end
