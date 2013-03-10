@@ -1,10 +1,10 @@
 ## Interface: 50200
 ## Title: Bottle Cap
-## Notes: Converts ALL CAPS CHAT into lowercase chat.
+## Notes: Converts incoming ALL CAPS CHAT into lowercase text.
 ## Author: Ethan Centaurai
 ## Version: @project-version@
 ## SavedVariables: BottleCapDB
-## OptionalDeps: Ace3
+## OptionalDeps: LibStub, Ace3
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Always: delayed
 

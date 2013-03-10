@@ -26,7 +26,7 @@ end
 
 
 function BottleCap:OnEnable()
-	self.db = LibStub("AceDB-3.0"):New("BottleCapDB", { profile = {
+	db = LibStub("AceDB-3.0"):New("BottleCapDB", { profile = {
 		verbose = false,
 		filter = {
 			SAY = true, YELL = true,
@@ -38,9 +38,7 @@ function BottleCap:OnEnable()
 			CHANNEL = true,
 			WHISPER = true,
 		},
-	}}, "Default")
-
-	db = self.db.profile
+	}}, "Default").profile
 
 	-- redundant loop, but cleaner than alternatives
 	for key, value in pairs(db.filter) do
@@ -54,16 +52,12 @@ function BottleCap:OnEnable()
 		args = {
 			desc = {
 				type = "description", order = 1,
-				name = "Converts ALL CAPS CHAT into lowercase chat.",
+				name = "Converts incoming ALL CAPS CHAT into lowercase text.",
 			},
 			filter = {
-				name = "Channels to Monitor",
+				name = "Channels to Monitor", type = "group", inline = true, order = 2,
 				get = function(key) return db.filter[key.arg] end, set = "ToggleFilter", handler = self,
-				type = "group", inline = true, order = 2, args = {
-					desc = {
-						type = "description", order = 1, width = "full",
-						name = "Choose which channels should be monitored for all caps chat.\nPlease note that removing all the ticks will render BottleCap useless.",
-					},
+				args = {
 					say = { type = "toggle", name = "Say", arg = "SAY", order = 2 },
 					yell = { type = "toggle", name = "Yell", arg = "YELL", order = 3 },
 					guild = { type = "toggle", name = "Guild", arg = "GUILD", order = 4 },
@@ -83,8 +77,8 @@ function BottleCap:OnEnable()
 			},
 			verbose = {
 				name = "Verbose Mode",
-				desc = "Convert all chat into lowercase text, regardless of original case.",
-				type = "toggle", order = 2, arg = "verbose",
+				desc = "Force all chat into lowercase text, regardless of original case.",
+				type = "toggle", order = 3, arg = "verbose",
 			},
 		},
 	})
@@ -93,7 +87,6 @@ function BottleCap:OnEnable()
 
 	_G.SlashCmdList["BOTTLECAP"] = function() InterfaceOptionsFrame_OpenToCategory("Bottle Cap") end
 	_G["SLASH_BOTTLECAP1"] = "/bottlecap"
-	_G["SLASH_BOTTLECAP2"] = "/bc"
 end
 
 function BottleCap:ToggleFilter(key, value)
@@ -102,6 +95,7 @@ function BottleCap:ToggleFilter(key, value)
 	if value then
 		ChatFrame_AddMessageEventFilter("CHAT_MSG_"..key.arg, bottleCaps)
 	else
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_"..key.arg, bottleCaps) -- attempting to remove a non-existant filter will fail silently
+		 -- attempting to remove a non-existant filter will fail silently
+		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_"..key.arg, bottleCaps)
 	end
 end
