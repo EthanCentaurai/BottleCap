@@ -3,8 +3,6 @@ local BottleCap = LibStub("AceAddon-3.0"):NewAddon("BottleCap")
 local db
 
 local function bottleCaps(_, _, msg, ...)
-	if db.ignore and msg == msg:upper() then return true end -- prevent all caps from showing in the chatframes
-
 	if db.verbose or msg == msg:upper() then
 		-- Verbose Mode = all chat becomes lower case, regardless of original case
 		-- else all ALL CAPS CHAT becomes lower case
@@ -28,7 +26,7 @@ end
 
 function BottleCap:OnEnable()
 	self.db = LibStub("AceDB-3.0"):New("BottleCapDB", { profile = {
-		verbose = false, ignore = true,
+		verbose = false,
 		filter = {
 			SAY = true, YELL = true, GUILD = false, OFFICER = false,
 			PARTY = true, RAID = true, RAID_LEADER = true, RAID_WARNING = true,
@@ -79,11 +77,6 @@ function BottleCap:OnEnable()
 				name = "Verbose Mode",
 				desc = "Convert all chat into lowercase text, regardless of original case.",
 				type = "toggle", order = 2, arg = "verbose",
-			},
-			ignore = {
-				name = "Ignore",
-				desc = "Prevent all caps chat from showing in your chat frames instead of forcing it into lowercase.  Text which is not all caps but was forced into lowercase by Verbose Mode is unaffected.",
-				type = "toggle", order = 3, arg = "ignore",
 			},
 		},
 	})
