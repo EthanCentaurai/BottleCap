@@ -59,7 +59,7 @@ function BottleCap:OnEnable()
 				args = {
 					say = { type = "toggle", name = "Say", arg = "SAY", order = 2 },
 					yell = { type = "toggle", name = "Yell", arg = "YELL", order = 3 },
-					channel = { type = "toggle", name = "Channel", arg = "CHANNEL", order = 4 },
+					channel = { type = "toggle", name = "Zone Channels", arg = "CHANNEL", order = 4 },
 					guild = { type = "toggle", name = "Guild", arg = "GUILD", order = 5 },
 					officer = { type = "toggle", name = "Guild Officer", arg = "OFFICER", order = 6 },
 					party = { type = "toggle", name = "Party", arg = "PARTY", order = 7 },
