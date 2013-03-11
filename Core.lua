@@ -30,13 +30,12 @@ function BottleCap:OnEnable()
 	db = LibStub("AceDB-3.0"):New("BottleCapDB", { profile = {
 		verbose = false,
 		filter = {
-			SAY = true, YELL = true,
+			SAY = true, YELL = true, CHANNEL = true,
 			GUILD = false, OFFICER = false,
 			PARTY = true, PARTY_LEADER = true,
 			INSTANCE_CHAT = true, INSTANCE_CHAT_LEADER = true,
 			RAID = true, RAID_LEADER = true, RAID_WARNING = true,
-			CHANNEL = true,
-			WHISPER = true,
+			WHISPER = true, BN_WHISPER = false, BN_CONVERSATION = false,
 		},
 	}}, "Default").profile
 
@@ -71,6 +70,8 @@ function BottleCap:OnEnable()
 					raidLeader = { type = "toggle", name = "Raid Leader", arg = "RAID_LEADER", order = 12 },
 					raidWarning = { type = "toggle", name = "Raid Warning", arg = "RAID_WARNING", order = 13 },
 					whisper = { type = "toggle", name = "Whisper", arg = "WHISPER", order = 14 },
+					bnWhisper = { type = "toggle", name = "Battle.net Whisper", arg = "BN_WHISPER", order = 15 },
+					bnConversation = { type = "toggle", name = "Battle.net Conversation", arg = "BN_CONVERSATION", order = 16 },
 				},
 			},
 			verbose = {
