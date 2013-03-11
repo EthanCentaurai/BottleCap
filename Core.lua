@@ -86,6 +86,7 @@ function BottleCap:OnEnable()
 
 	_G.SlashCmdList["BOTTLECAP"] = function() InterfaceOptionsFrame_OpenToCategory("BottleCap") end
 	_G["SLASH_BOTTLECAP1"] = "/bottlecap"
+	_G["SLASH_BOTTLECAP2"] = "/bottle"
 end
 
 function BottleCap:ToggleFilter(key, value)
