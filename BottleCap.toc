@@ -1,5 +1,5 @@
 ## Interface: 50200
-## Title: Bottle Cap
+## Title: BottleCap
 ## Notes: Converts incoming ALL CAPS CHAT into lowercase text.
 ## Author: Ethan Centaurai
 ## Version: @project-version@
@@ -7,6 +7,8 @@
 ## OptionalDeps: LibStub, LibChatAnims, Ace3
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Always: delayed
+## X-Icon: Interface\Icons\INV_Drink_11
+## X-Category: Chat & Communication
 
 #@no-lib-strip@
 Lib\LibStub\LibStub.lua
