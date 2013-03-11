@@ -44,7 +44,7 @@ function BottleCap:OnEnable()
 		if value then ChatFrame_AddMessageEventFilter("CHAT_MSG_"..key, bottleCaps) end
 	end
 
-	LibStub("AceConfig-3.0"):RegisterOptionsTable("BottleCap", {
+	LibStub("AceConfig-3.0"):RegisterOptionsTable("Bottle Cap", {
 		name = "Bottle Cap", type = "group",
 		get = function(key) return db[key.arg] end,
 		set = function(key, value) db[key.arg] = value end,
@@ -76,13 +76,13 @@ function BottleCap:OnEnable()
 			},
 			verbose = {
 				name = "Verbose Mode",
-				desc = "Force all chat into lowercase text, regardless of original case.",
+				desc = "Force all text in monitored channels into lowercase, regardless of original case.",
 				type = "toggle", order = 3, arg = "verbose",
 			},
 		},
 	})
 
-	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("BottleCap", "Bottle Cap")
+	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("Bottle Cap", "Bottle Cap")
 
 	_G.SlashCmdList["BOTTLECAP"] = function() InterfaceOptionsFrame_OpenToCategory("Bottle Cap") end
 	_G["SLASH_BOTTLECAP1"] = "/bottlecap"
