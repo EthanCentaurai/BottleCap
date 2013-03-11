@@ -1,5 +1,5 @@
 
-local BottleCap = LibStub("AceAddon-3.0"):NewAddon("BottleCap")
+local _, BottleCap = ...
 local db
 
 local function bottleCaps(_, _, msg, ...)
@@ -100,3 +100,6 @@ function BottleCap:ToggleFilter(key, value)
 		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_"..channel, bottleCaps)
 	end
 end
+
+
+LibStub("AceAddon-3.0"):NewAddon(BottleCap, "BottleCap")
