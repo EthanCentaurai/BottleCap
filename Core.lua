@@ -44,8 +44,8 @@ function BottleCap:OnEnable()
 		if value then ChatFrame_AddMessageEventFilter("CHAT_MSG_"..key, bottleCaps) end
 	end
 
-	LibStub("AceConfig-3.0"):RegisterOptionsTable("Bottle Cap", {
-		name = "Bottle Cap", type = "group",
+	LibStub("AceConfig-3.0"):RegisterOptionsTable("BottleCap", {
+		name = "BottleCap", type = "group",
 		get = function(key) return db[key.arg] end,
 		set = function(key, value) db[key.arg] = value end,
 		args = {
@@ -82,9 +82,9 @@ function BottleCap:OnEnable()
 		},
 	})
 
-	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("Bottle Cap", "Bottle Cap")
+	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("BottleCap", "BottleCap")
 
-	_G.SlashCmdList["BOTTLECAP"] = function() InterfaceOptionsFrame_OpenToCategory("Bottle Cap") end
+	_G.SlashCmdList["BOTTLECAP"] = function() InterfaceOptionsFrame_OpenToCategory("BottleCap") end
 	_G["SLASH_BOTTLECAP1"] = "/bottlecap"
 end
 
