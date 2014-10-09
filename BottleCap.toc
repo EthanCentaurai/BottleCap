@@ -1,4 +1,4 @@
-## Interface: 50400
+## Interface: 60000
 ## Title: BottleCap
 ## Notes: Converts incoming ALL CAPS CHAT into lowercase text.
 ## Author: Ethan Centaurai
